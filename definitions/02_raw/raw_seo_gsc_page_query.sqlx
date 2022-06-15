@@ -1,6 +1,6 @@
 config {
   type: "table",
-  schema: "seo_dashboard_04_rpt",
+  schema: "seo_dashboard_02_raw",
   bigquery: {
     partitionBy: "date",
     clusterBy: ["site_url", "page", "query"]
