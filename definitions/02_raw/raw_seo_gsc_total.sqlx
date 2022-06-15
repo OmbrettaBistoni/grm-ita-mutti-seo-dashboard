@@ -1,0 +1,25 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_04_rpt",
+  bigquery: {
+    partitionBy: "date",
+    clusterBy: ["site_url"]
+  }
+}
+
+with up_to_date as (
+  select
+    *
+    , rank() over (
+        partition by 
+          date,
+          site_url
+        order by dt_created desc
+    ) rank
+  from ${ref("seo_gsc_total")}
+  )
+
+select 
+  * 
+from up_to_date
+where rank = 1

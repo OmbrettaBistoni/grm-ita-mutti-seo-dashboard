@@ -1,0 +1,27 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_04_rpt",
+  bigquery: {
+    partitionBy: "date",
+    clusterBy: ["site_url", "page", "query"]
+  }
+}
+
+with up_to_date as (
+  select
+    * EXCEPT(query), SUBSTRING(query, 0, 200) AS query
+    , rank() over (
+        partition by 
+          site_url
+          , page
+          , SUBSTRING(query, 0, 200)
+          , date
+        order by dt_created desc
+    ) rank
+  from ${ref("seo_gsc_page_query")}
+  )
+
+select 
+  * 
+from up_to_date
+where rank = 1

@@ -1,0 +1,30 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_02_raw",
+  bigquery: {
+    partitionBy: "gadate"
+  }
+}
+
+with up_to_date as (
+  select
+    * 
+    , rank() over (
+        partition by 
+          gadate
+          , gadevicecategory
+          , gasourcemedium
+          , gachannelgrouping
+          , gawebpropertyid
+          , galandingpagepath
+          , gaaccountid
+          , gaprofileid
+        order by dt_created desc
+    ) rank
+  from ${ref("seo_ga_source_traffic")}
+  )
+
+select 
+  * 
+from up_to_date
+where rank = 1
