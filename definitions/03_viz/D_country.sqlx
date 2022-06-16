@@ -32,7 +32,7 @@ with m as (
   select 
     'Norway' as Country,
     'NO',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
   UNION ALL
   select 
     'Australia' as Country,
