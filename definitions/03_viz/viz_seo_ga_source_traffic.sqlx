@@ -1,0 +1,34 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_03_viz",
+  bigquery: {
+    partitionBy: "date",
+    clusterBy: ["gachannelgrouping", "country"]
+  }
+}
+
+  select 
+    gadate as date
+    ,gachannelgrouping
+    ,CASE
+        WHEN gaprofilename = '20 - Mutti UK' THEN 'UK'
+        WHEN gaprofilename = '09 - Mutti Italy' THEN 'IT'
+        WHEN gaprofilename = '21 - Mutti US' THEN 'US'
+        WHEN gaprofilename = '08 - Mutti Germany' THEN 'DE'
+        WHEN gaprofilename = '19 - Mutti Sweden' THEN 'SE'
+        WHEN gaprofilename = '06 - Mutti Finland' THEN 'FI'
+        WHEN gaprofilename = '01 - Mutti Australia' THEN 'AU'
+        WHEN gaprofilename = '12 - Mutti Norway' THEN 'NO'
+        WHEN gaprofilename = '05 - Mutti Denmark' THEN 'DK'
+      end as country
+    , sum(gapageviews) as gapageviews
+    , sum(gasessions) as gasessions
+    , sum(gatransactions) as gatransactions
+    , sum(gausers) as gausers
+  from ${ref("raw_seo_ga_source_traffic")}
+  WHERE 
+    gachannelgrouping = 'Organic Search'
+  group by
+    gadate
+    , country
+    , gachannelgrouping

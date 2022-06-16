@@ -1,0 +1,57 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_03_viz"
+}
+
+with m as (
+  select 
+    'Italy' as Country,
+    'IT' as CountryCode, 
+    'Main' as CountryGroup
+  UNION ALL
+  select 
+    'Germany' as Country,
+    'DE',
+    'Main' as CountryGroup
+  UNION ALL
+  select 
+    'UK' as Country,
+    'UK',
+    'Secondary' as CountryGroup
+  UNION ALL
+  select 
+    'US' as Country,
+    'US',
+    'Secondary' as CountryGroup
+  UNION ALL
+  select 
+    'Finland' as Country,
+    'FI',
+    'Secondary' as CountryGroup
+  UNION ALL
+  select 
+    'Norway' as Country,
+    'NO',
+    'Secondary' as CountryGroup
+  UNION ALL
+  select 
+    'Australia' as Country,
+    'AU',
+    'Main' as CountryGroup
+  UNION ALL
+  select 
+    'Sweden' as Country,
+    'SE',
+    'Secondary' as CountryGroup
+  UNION ALL
+  select 
+    'Denmark' as Country,
+    'DK',
+    'Secondary' as CountryGroup
+)
+select 
+  Country
+  , CountryGroup
+  , ROW_NUMBER() OVER (order by Country) as ID_Country
+from m
+

@@ -1,0 +1,19 @@
+config {
+  type: "table",
+  schema: "seo_dashboard_03_viz"
+}
+
+SELECT
+         MY_DATE date
+        ,EXTRACT(YEAR FROM MY_DATE) Year
+        ,EXTRACT(MONTH FROM MY_DATE) Month_Number
+        ,FORMAT_DATETIME("%B", DATETIME(MY_DATE)) Month
+        ,EXTRACT(QUARTER FROM MY_DATE) Quarter_Number
+        ,EXTRACT(DAY FROM MY_DATE) Day
+        ,EXTRACT(DAYOFWEEK FROM MY_DATE) Day_of_Week
+        ,EXTRACT(WEEK FROM MY_DATE) Week
+    FROM 
+    (
+    SELECT DATE_ADD('2022-01-01',INTERVAL param DAY) AS MY_DATE
+      FROM unnest(GENERATE_ARRAY(0, 10000, 1)) as param
+    )
