@@ -17,17 +17,17 @@ with m as (
   select 
     'UK' as Country,
     'UK',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
   UNION ALL
   select 
     'US' as Country,
     'US',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
   UNION ALL
   select 
     'Finland' as Country,
     'FI',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
   UNION ALL
   select 
     'Norway' as Country,
@@ -42,12 +42,12 @@ with m as (
   select 
     'Sweden' as Country,
     'SE',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
   UNION ALL
   select 
     'Denmark' as Country,
     'DK',
-    'Secondary' as CountryGroup
+    'Main' as CountryGroup
 )
 select 
   Country
