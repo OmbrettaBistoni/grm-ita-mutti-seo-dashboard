@@ -51,6 +51,7 @@ with m as (
 )
 select 
   Country
+  , CountryCode
   , CountryGroup
   , ROW_NUMBER() OVER (order by Country) as ID_Country
 from m
