@@ -20,6 +20,10 @@ SELECT
     WHEN site_url = 'https://mutti-parma.com/se/' THEN 'SE'
     WHEN site_url = 'https://mutti-parma.com/au/' THEN 'AU'
   END AS country,
+  CASE  
+    WHEN LOWER(query) LIKE '%mutti%' THEN 'Brand'
+    ELSE 'Unbrand'
+    END AS traffic_type,
   page,
   query,
   SUM(clicks) AS clicks,
@@ -30,5 +34,6 @@ FROM
 GROUP BY
   date,
   country,
+  traffic_type,
   page,
   query
