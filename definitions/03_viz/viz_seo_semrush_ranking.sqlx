@@ -1,6 +1,6 @@
 config {
   type: "table",
-  schema: "seo_dashboard_04_viz"
+  schema: "seo_dashboard_03_viz"
 }
 
   select 
