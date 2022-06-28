@@ -7,10 +7,10 @@ config {
     Market
     , Main_Cluster
     , Keywords
-    , ifnull(SAFE_CAST(Keyword_Position as INT), 101) as Keyword_Position
     , Position_Label
-    --, SAFE_CAST(REPLACE(Visibility_Index, ',', '.') as NUMERIC) as Visibility_Index
-    , SAFE_CAST(Avg_Search_Volume_Monthly AS INT) as Avg_Search_Volume_Monthly
-    , FORMAT_DATE("%B %Y", PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', ''))) as date_str
-    , PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', '')) as date_str_order
+    , SAFE_CAST(Avg__Search_Volume_Monthly AS INT) as Avg_Search_Volume_Monthly
+    --, FORMAT_DATE("%B %Y", PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', ''))) as date_str
+    --, PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', '')) as date_str_order,
+    , ifnull(SAFE_CAST(_052022_Keyword_Position as INT), 101) as _052022_Keyword_Position
+    , ifnull(SAFE_CAST(_062022_Keyword_Position as INT), 101) as _062022_Keyword_Position
 	from ${ref("seo_semrush_ranking")}
