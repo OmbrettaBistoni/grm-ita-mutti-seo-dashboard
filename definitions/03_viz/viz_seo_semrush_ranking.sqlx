@@ -4,7 +4,9 @@ config {
 }
 
   select 
-    Market
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END AS Market
     , Main_Cluster
     , Keywords
     , Position_Label
