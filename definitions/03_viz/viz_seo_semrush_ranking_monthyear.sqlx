@@ -4,7 +4,9 @@ config {
 }
 
 SELECT 
-  Market,
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END AS Market,
   'May 2022' AS year_month,
   '202205' AS year_month_index,
   Main_Cluster,
@@ -20,7 +22,9 @@ FROM ${ref("viz_seo_semrush_ranking")}
 WHERE _052022_Keyword_Position is not null
 UNION ALL
 SELECT 
-  Market,
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
   'June 2022',
   '202206',
   Main_Cluster,
