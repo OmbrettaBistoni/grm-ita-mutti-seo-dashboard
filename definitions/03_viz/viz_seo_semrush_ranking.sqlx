@@ -9,8 +9,10 @@ config {
       ELSE Market END AS Market
     , Main_Cluster
     , Keywords
-    , Position_Label
-    , SAFE_CAST(Avg__Search_Volume_Monthly AS INT) as Avg_Search_Volume_Monthly
+    , CASE 
+        WHEN Position_Label = '04-ott' THEN '4-10'
+        ELSE Position_Label END AS Position_Label
+    , SAFE_CAST(Avg_Search_Volume_Monthly AS INT) as Avg_Search_Volume_Monthly
     --, FORMAT_DATE("%B %Y", PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', ''))) as date_str
     --, PARSE_DATE('%Y-%m', REPLACE(lower(ARRAY_REVERSE(SPLIT(_FILE_NAME, '_'))[SAFE_OFFSET(0)]) , '.csv', '')) as date_str_order,
     , ifnull(SAFE_CAST(_052022_Keyword_Position as INT), 101) as _052022_Keyword_Position
