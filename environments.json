@@ -3,6 +3,24 @@
     {
       "name": "production",
       "configOverride": {},
+      "schedules": [
+        {
+          "name": "new_schedule",
+          "cron": "0 8 * * mon,tue,wed,thu,fri,sat,sun",
+          "options": {
+            "fullRefresh": true
+          },
+          "disabled": false,
+          "notify": [
+            {
+              "channel": "mutti_dashboard_seo",
+              "statuses": [
+                "FAILURE"
+              ]
+            }
+          ]
+        }
+      ],
       "gitRef": "master"
     }
   ],
