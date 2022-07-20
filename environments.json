@@ -3,25 +3,6 @@
     {
       "name": "production",
       "configOverride": {},
-      "schedules": [
-        {
-          "name": "all_project_everyday_09am",
-          "cron": "0 6 * * mon,tue,wed,thu,fri,sat,sun",
-          "options": {
-            "includeDependencies": true,
-            "fullRefresh": true,
-            "includeDependents": false
-          },
-          "notify": [
-            {
-              "channel": "mutti_dashboard_seo",
-              "statuses": [
-                "FAILURE"
-              ]
-            }
-          ]
-        }
-      ],
       "gitRef": "master"
     }
   ],
