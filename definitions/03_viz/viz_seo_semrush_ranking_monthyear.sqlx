@@ -3,6 +3,25 @@ config {
   schema: "seo_dashboard_03_viz"
 }
 
+
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END AS Market,
+  'Start Position' AS year_month,
+  '' AS year_month_index,
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+  CASE
+    WHEN CAST(_052022_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_052022_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_052022_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_052022_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END AS Position_Label
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _0_Keyword_Position is not null
+UNION ALL
 SELECT 
     CASE
       WHEN Market = 'EN' THEN 'UK'
