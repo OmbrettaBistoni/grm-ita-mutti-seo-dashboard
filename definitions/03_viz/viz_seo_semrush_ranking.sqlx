@@ -21,4 +21,8 @@ config {
     , ifnull(SAFE_CAST(_202207_Keyword_Position as INT), 101) as _072022_Keyword_Position
     , ifnull(SAFE_CAST(_202208_Keyword_Position as INT), 101) as _082022_Keyword_Position
     , ifnull(SAFE_CAST(_202209_Keyword_Position as INT), 101) as _092022_Keyword_Position
+    , ifnull(SAFE_CAST(_202210_Keyword_Position as INT), 101) as _102022_Keyword_Position
+    , ifnull(SAFE_CAST(_202211_Keyword_Position as INT), 101) as _112022_Keyword_Position
+    , ifnull(SAFE_CAST(_202212_Keyword_Position as INT), 101) as _122022_Keyword_Position
+    , ifnull(SAFE_CAST(_202301_Keyword_Position as INT), 101) as _012023_Keyword_Position
 	from ${ref("seo_semrush_ranking")}

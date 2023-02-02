@@ -111,3 +111,75 @@ SELECT
     END
 FROM ${ref("viz_seo_semrush_ranking")}
 WHERE _092022_Keyword_Position is not null
+UNION ALL
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
+  'October 2022',
+  '202210',
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+    CASE
+    WHEN CAST(_102022_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_102022_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_102022_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_102022_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _102022_Keyword_Position is not null
+UNION ALL
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
+  'November 2022',
+  '202211',
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+    CASE
+    WHEN CAST(_112022_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_112022_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_112022_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_112022_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _112022_Keyword_Position is not null
+UNION ALL
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
+  'December 2022',
+  '202212',
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+    CASE
+    WHEN CAST(_122022_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_122022_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_122022_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_122022_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _122022_Keyword_Position is not null
+UNION ALL
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
+  'January 2023',
+  '202301',
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+    CASE
+    WHEN CAST(_012023_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_012023_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_012023_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_012023_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _012023_Keyword_Position is not null
