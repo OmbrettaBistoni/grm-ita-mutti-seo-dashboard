@@ -8,6 +8,7 @@ config {
       WHEN Market = 'EN' THEN 'UK'
       ELSE Market END AS Market
     , Main_Cluster
+    , Ranking_URL
     , Keywords
     , CASE 
         WHEN Position_Label = '04-ott' THEN '4-10'
