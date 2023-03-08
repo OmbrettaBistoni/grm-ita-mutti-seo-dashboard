@@ -183,3 +183,21 @@ SELECT
     END
 FROM ${ref("viz_seo_semrush_ranking")}
 WHERE _012023_Keyword_Position is not null
+UNION ALL
+SELECT 
+    CASE
+      WHEN Market = 'EN' THEN 'UK'
+      ELSE Market END,
+  'February 2023',
+  '202302',
+  Main_Cluster,
+  Keywords,
+  Avg_Search_Volume_Monthly,
+    CASE
+    WHEN CAST(_022023_Keyword_Position AS INTEGER) BETWEEN 1 and 3 THEN 'Top 3' 
+    WHEN CAST(_022023_Keyword_Position AS INTEGER) BETWEEN 4 and 10 THEN '4-10' 
+    WHEN CAST(_022023_Keyword_Position AS INTEGER) BETWEEN 11 and 20 THEN '2° page'
+    WHEN CAST(_022023_Keyword_Position AS INTEGER) >= 21 THEN 'Over 2° page'
+    END
+FROM ${ref("viz_seo_semrush_ranking")}
+WHERE _022023_Keyword_Position is not null
