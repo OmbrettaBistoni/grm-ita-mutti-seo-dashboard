@@ -25,6 +25,7 @@ config {
     , sum(gasessions) as gasessions
     , sum(gatransactions) as gatransactions
     , sum(gausers) as gausers
+    , AVG(gatimeonpage) AS gatimeonpage
   from ${ref("raw_seo_ga_source_traffic")}
   WHERE 
     gachannelgrouping = 'Organic Search'
