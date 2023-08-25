@@ -32,4 +32,5 @@ config {
     , ifnull(SAFE_CAST(_202305_Keyword_Position as INT), 101) as _052023_Keyword_Position
     , ifnull(SAFE_CAST(_202306_Keyword_Position as INT), 101) as _062023_Keyword_Position
     , ifnull(SAFE_CAST(_202307_Keyword_Position as INT), 101) as _072023_Keyword_Position
+    , ifnull(SAFE_CAST(_202308_Keyword_Position as INT), 101) as _082023_Keyword_Position
 	from ${ref("seo_semrush_ranking")}
