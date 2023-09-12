@@ -11,6 +11,10 @@ SELECT
   'Start Position' AS year_month,
   '' AS year_month_index,
   Main_Cluster,
+  CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
   CASE
