@@ -33,6 +33,10 @@ SELECT
   'May 2022' AS year_month,
   '202205' AS year_month_index,
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
   CASE
@@ -51,6 +55,10 @@ SELECT
   'June 2022',
   '202206',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -69,6 +77,10 @@ SELECT
   'July 2022',
   '202207',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -87,6 +99,10 @@ SELECT
   'August 2022',
   '202208',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -105,6 +121,10 @@ SELECT
   'September 2022',
   '202209',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -123,6 +143,10 @@ SELECT
   'October 2022',
   '202210',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -141,6 +165,10 @@ SELECT
   'November 2022',
   '202211',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -159,6 +187,10 @@ SELECT
   'December 2022',
   '202212',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -177,6 +209,10 @@ SELECT
   'January 2023',
   '202301',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -195,6 +231,10 @@ SELECT
   'February 2023',
   '202302',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -213,6 +253,10 @@ SELECT
   'March 2023',
   '202303',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -231,6 +275,10 @@ SELECT
   'April 2023',
   '202304',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -249,6 +297,10 @@ SELECT
   'May 2023',
   '202305',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -267,6 +319,10 @@ SELECT
   'June 2023',
   '202306',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -285,6 +341,10 @@ SELECT
   'July 2023',
   '202307',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
@@ -303,6 +363,10 @@ SELECT
   'August 2023',
   '202308',
   Main_Cluster,
+    CASE
+      WHEN Main_Cluster = 'Recipe' THEN 'Recipe'
+      WHEN Main_Cluster = 'Other' THEN 'Other'
+      ELSE 'Product' END AS Main_Cluster_Category,
   Keywords,
   Avg_Search_Volume_Monthly,
     CASE
